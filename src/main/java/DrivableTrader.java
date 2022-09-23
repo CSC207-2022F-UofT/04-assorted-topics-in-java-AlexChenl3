@@ -16,6 +16,11 @@ class DrivableTrader extends Trader<Drivable>   {
         super(inventory, wishlist, money);
     }
 
+    /* need a separate constructor because of DrivableTrader(10) in DrivableTraderTest*/
+    public DrivableTrader (int money) {
+        super(money);
+    }
+
     @Override
     public int getSellingPrice (Drivable object) {
         int newPrice = super.getSellingPrice(object);
