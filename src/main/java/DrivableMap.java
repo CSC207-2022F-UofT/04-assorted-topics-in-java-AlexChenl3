@@ -13,6 +13,8 @@ import java.util.List;
 
 class DrivableMap {
     HashMap<String, Drivable> drivable_map;
+    /* HashMapps add using .put()
+    *  ArrayList<> add using .add() */
 
     /**
      * A generic constructor that initializes car_map
@@ -55,7 +57,15 @@ class DrivableMap {
      *       drivable_map.
      */
     public List<Tradable> getTradable () {
+        ArrayList<Tradable> allTradableItems = new ArrayList<Tradable>();
 
+        for (Drivable obj : drivable_map.values()) {
+            if (obj instanceof Tradable) {
+                /* have to cast obj with (Tradable) since it takes a Tradable obj, not Drivable obj*/
+                allTradableItems.add((Tradable) obj);
+            }
+        }
+        return allTradableItems;
     }
 
 
